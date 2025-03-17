@@ -39,10 +39,11 @@ def process_text(text_data):
         "data": r"\d{2}/\d{2}/\d{4}",
         "serie_nota_fiscal": r"SAT No\. (\d+)|Série:\s*(\d+)",
         "forma_pgto": r"(?i)(dinheiro|pix|débito|crédito|cheque|DEBITO|CREDITO|DÉBITO|CRÉDITO|CARTAO DE CREDITO|CARTAO DE DEBITO)",
-        "valor_total": r"TOTAL\s*R\$\s*:?\s*([\d\.,]+)",
-        "nome_emissor": r"^(.*?)(?=\s*CNPJ|\s*End\.|\s*Rua|\s*Avenida|\s*Av\.|\s*CEP|\s*LTDA)",
-        "endereco_emissor": r"(?:End\.:\s*|Rua\s*|Avenida\s*|Av\.|AVENIDA\s*|Rodovia\s*|BR|RODOVIA)[\s\S]*?(?=\s*CEP \d{5}-\d{3}|\s*CNPJ|\s*TEL)",
-        "numero_nota_fiscal": r"Extrato No\s*(\d+)"
+        "valor_total": r'R\$\s*(\d+[,.]\d+)',
+        "nome_emissor": r"^(.*?)(?=\s*CNPJ|\s*End\.|\s*Rua|\s*Avenida|\s*Av\.|\s*CEP|\s*LTDA|\s*RUA)",
+        "endereco_emissor": r"(?:End\.:\s*|Rua\s*|Avenida\s*|Av\.|AVENIDA\s*|Rodovia\s*|BR|RODOVIA)[\s\S]*?(?=\s*CEP \d{5}-\d{3}|\s*CNPJ|\s*TEL|\s*CEP)",
+        "numero_nota_fiscal": r"Extrato No\s*(\d+)",
+        "CNPJ_emissor" : r"\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}",
     }
 
     for key, pattern in patterns.items():

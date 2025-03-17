@@ -5,9 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Invoice API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permitir todas as origens (altere para um domínio específico em produção)
+    allow_origins=["*"],  
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos os métodos HTTP (GET, POST, etc.)
-    allow_headers=["*"],  # Permitir todos os headers
+    allow_methods=["*"], 
+    allow_headers=["*"], 
 )
 app.include_router(router)
