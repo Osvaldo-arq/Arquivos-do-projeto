@@ -49,3 +49,20 @@ async def upload_invoice(file: UploadFile = File(...)):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro no processamento: {str(e)}")
+
+
+@router.get("/api/v1/invoice/{file_name}")
+def get_processed_invoice(file_name: str):
+    try:
+        # Nome do arquivo esperado no bucket de saída
+        result_filename = f"{file_name}"
+        
+        # Busca o conteúdo do arquivo JSON no S3
+        result_data = s3_service.get_result(result_filename)
+        
+        if not result_data:
+            raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+        
+        return json.loads(result_data)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao recuperar o arquivo: {str(e)}")
