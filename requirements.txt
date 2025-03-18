@@ -1,0 +1,11 @@
+fastapi==0.110.0  # Versão mais recente estável no momento
+uvicorn==0.29.0  # Para rodar o servidor ASGI
+boto3==1.34.66  # SDK AWS para interagir com S3 e Textract
+python-dotenv==1.0.1  # Carregar variáveis de ambiente do .env
+mangum==0.17.0  # Adaptador para rodar no AWS Lambda via API Gateway
+spacy==3.7.2  # Biblioteca NLP
+spacy[pt]  # Para baixar o modelo pt_core_news_sm depois com spacy.cli.download
+pydantic==2.7.0  # Validação de dados
+requests==2.31.0  # Fazer requisições HTTP (se necessário)
+watchtower==3.0.1  # Enviar logs para AWS CloudWatch
+python-multipart

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Nota Fiscal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">Processador de Notas Fiscais</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Upload de Nota Fiscal</h1>
+        
+        <div class="upload-box">
+            <input type="file" id="fileInput">
+            <button id="uploadButton">Enviar</button>
+        </div>
+
+        <div id="loading" class="loading-indicator hidden">Processando...</div>
+
+        <div id="dataContainer" class="data-container hidden">
+            <h2>Dados Processados</h2>
+            <table id="dataTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CNPJ Emissor</th>
+                        <th>Enderço Emissor</th>
+                        <th>CPF Consumidor</th>
+                        <th>Data da Emissão</th>
+                        <th>Numero da Nota</th>
+                        <th>Serie da Nota</th>
+                        <th>Valor</th>
+                        <th>Forma de Pagamento</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
